@@ -38,11 +38,16 @@ const Pockman = () => {
     }
   };
   return (
+    <div> 
+ <button>Add New</button>
     <div className="pokemon-container">
-      {pokemons.map((pokemon) => (
+
+      {!pokemons && "no data available"}
+      {pokemons && pokemons.map((pokemon) => (
         <PokemonCard key={pokemon._id} pokemon={pokemon} />
-      ))}
+      )) }
       {loading && <div className="loading">Loading...</div>}
+    </div>
     </div>
   );
 };
